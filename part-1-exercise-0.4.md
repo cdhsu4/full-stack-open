@@ -3,13 +3,14 @@
     browser-->server: PUSH new Form data entry to server array, do NOT fetch again via e.preventdefault
     server-->browser: RETURN new total form data inventory
 ```
-
 ```mermaid
-  graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+  sequenceDiagram;
+  browser-->server: Fetch new webpage to load html, css, js containing/ current total form data inventory
+  server-->browser: Return current total form data inventory
+  brower-->browser: Render currenty total form data inventory along w/ html, css, js received in DOM
+  browser-->browser: PUSH new Form data entry to server array, do NOT fetch to server again via e.preventdefault
+  browser-->browser: Return/Render new Form data entry to DOM
+    
 ```
 
 /* 
